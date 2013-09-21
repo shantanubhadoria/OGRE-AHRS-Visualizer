@@ -26,10 +26,10 @@ if(WIN32)
 endif(WIN32)
  
 if(UNIX)
-	if(EXISTS "/usr/local/lib/OGRE/cmake")
+	if(EXISTS "/usr/share/OGRE/cmake")
 
-	  set(CMAKE_MODULE_PATH "/usr/local/lib/OGRE/cmake/;${CMAKE_MODULE_PATH}")
-	  set(OGRE_SAMPLES_INCLUDEPATH "/usr/local/share/OGRE/samples/Common/include/") # We could just *assume* that developers uses this basepath : /usr/local
+	  set(CMAKE_MODULE_PATH "/usr/share/OGRE/cmake/modules;${CMAKE_MODULE_PATH}")
+    set(OGRE_SAMPLES_INCLUDEPATH "/usr/share/OGRE-1.7.4/Samples/Common/include/") # We could just *assume* that developers uses this basepath : /usr/local
 
 	elseif(EXISTS "/usr/lib/OGRE/cmake")
 
@@ -38,7 +38,7 @@ if(UNIX)
 
 	else ()
 	  message(SEND_ERROR "Failed to find module path.")
-	endif(EXISTS "/usr/local/lib/OGRE")
+  endif(EXISTS "/usr/lib/i386-linux-gnu/OGRE-1.7.4/")
 endif(UNIX)
  
 if (CMAKE_BUILD_TYPE STREQUAL "")
